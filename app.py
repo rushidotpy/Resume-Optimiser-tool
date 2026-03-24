@@ -21,11 +21,7 @@ with open("prompt.txt", "r") as f:
 st.set_page_config(page_title="Resume Optimizer", page_icon="📄", layout="wide")
 st.title("📄 Resume Optimizer")
 st.caption("Powered by Groq + llama-3.3-70b-versatile")
-uploaded_file = st.file_uploader(
-    "Choose resume file",
-    type=["pdf", "docx"],  
-)
-
+uploaded_file = st.file_uploader("Upload your resume (.txt only)", type=["txt"])
 jd = st.text_area("Paste Job Description here", height=300, placeholder="Copy the full job description and paste it here...")
 
 if st.button("Optimize My Resume", type="primary"):
