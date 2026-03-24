@@ -21,7 +21,11 @@ with open("prompt.txt", "r") as f:
 st.set_page_config(page_title="Resume Optimizer", page_icon="📄", layout="wide")
 st.title("📄 Resume Optimizer")
 st.caption("Powered by Groq + llama-3.3-70b-versatile")
-uploaded_file = st.file_uploader("Upload your resume (.txt)", type=["txt"])
+uploaded_file = st.file_uploader(
+    "Choose resume file",
+    type=["pdf", "docx"],  
+)
+
 jd = st.text_area("Paste Job Description here", height=300, placeholder="Copy the full job description and paste it here...")
 
 if st.button("Optimize My Resume", type="primary"):
@@ -54,6 +58,4 @@ if st.button("Optimize My Resume", type="primary"):
             file_name="optimized_resume.txt",
             mime="text/plain"
         )
-password = st.text_input("Enter password", type="password")
-if password != st.secrets["APP_PASSWORD"]:
-    st.stop()
+
