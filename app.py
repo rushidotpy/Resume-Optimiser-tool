@@ -21,12 +21,12 @@ with open("prompt.txt", "r") as f:
 st.set_page_config(page_title="Resume Optimizer", page_icon="📄", layout="wide")
 st.title("📄 Resume Optimizer")
 st.caption("Powered by Groq + llama-3.3-70b-versatile")
-uploaded_file = st.file_uploader("Upload your resume (.txt only)", type=["txt"])
+RESUME = st.text_area("Paste your resume here", height=300, placeholder="Copy and paste your resume text here...")
 jd = st.text_area("Paste Job Description here", height=300, placeholder="Copy the full job description and paste it here...")
 
 if st.button("Optimize My Resume", type="primary"):
-    if not uploaded_file:
-        st.warning("Please upload your resume first.")
+    if not RESUME.strip():
+        st.warning("Please paste your resume first.")
     elif not jd.strip():
         st.warning("Please paste a job description.")
     else:
