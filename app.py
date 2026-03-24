@@ -34,7 +34,7 @@ if st.button("Optimize My Resume", type="primary"):
     elif not jd.strip():
         st.warning("Please paste a job description.")
     else:
-        RESUME = uploaded_file.read().decode("utf-8")
+        RESUME = uploaded_file.read().decode("utf-8", errors="ignore")
         with st.spinner("Optimizing your resume..."):
             response = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
