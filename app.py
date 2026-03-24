@@ -40,7 +40,7 @@ if st.button("Optimize My Resume", type="primary"):
                         "role": "user",
                         "content": f"Here is my resume:\n\n{RESUME}\n\nHere is the job description:\n\n{jd}\n\nOptimize my resume for this role."
                     }
-                ]
+                ],
                 max_tokens=4000
             )
             result = response.choices[0].message.content
