@@ -176,6 +176,8 @@ WRITING STYLE
 - No generic adjectives
 - No copy paste from the job description
 - Avoid repetitive sentence structures
+- No phrase should appear in more than one bullet across the entire resume
+- PRESERVE ALL original metrics: every percentage, number, and quantified result from the original resume must appear in the output
 
 CRITICAL REQUIREMENTS:
 - Every single bullet point MUST have 2-3 lines minimum
